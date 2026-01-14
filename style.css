@@ -270,7 +270,7 @@ body {
 }
 
 .team-img {
-    max-width: 450px;        /* Keeps image smaller/contained */
+    max-width: 400px;        /* Keeps image smaller/contained */
     width: 100%;             /* Responsive */
     height: auto;
     border-radius: 20px;
