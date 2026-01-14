@@ -1,0 +1,232 @@
+/* CSS Variables for easy color changes */
+:root {
+    --bg-color: #0f172a; /* Dark Navy */
+    --card-bg: #1e293b; /* Lighter Navy */
+    --text-main: #f1f5f9; /* Off White */
+    --text-muted: #94a3b8;
+    --accent-blue: #38bdf8; /* Aruba Ocean Blue */
+    --accent-yellow: #facc15; /* Aruba Sun Yellow */
+    --font-heading: 'Poppins', sans-serif;
+    --font-code: 'Fira Code', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-code);
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-blue);
+}
+
+.btn-nav {
+    background: var(--accent-blue);
+    color: var(--bg-color) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    font-weight: 700 !important;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    padding-top: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--accent-yellow);
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--bg-color);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+/* Code Window Graphic */
+.code-window {
+    flex: 1;
+    min-width: 300px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    font-family: var(--font-code);
+    overflow: hidden;
+    margin-left: 2rem;
+    max-width: 500px;
+}
+
+.window-header {
+    background: #334155;
+    padding: 10px 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.window-body {
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.keyword { color: #c778dd; }
+.variable { color: #e5c07b; }
+.string { color: #98c379; }
+.comment { color: #5c6370; }
+.indent-1 { padding-left: 20px; }
+
+/* Services */
+.section {
+    padding: 5rem 10%;
+}
+
+.bg-darker {
+    background-color: #0b1120;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    border-color: var(--accent-blue);
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact */
+.contact-box {
+    background: linear-gradient(135deg, var(--card-bg), #0f172a);
+    text-align: center;
+    padding: 4rem;
+    border-radius: 20px;
+    border: 2px solid var(--accent-blue);
+}
+
+.email-link {
+    display: block;
+    font-size: 2rem;
+    color: var(--accent-yellow);
+    text-decoration: none;
+    margin: 1.5rem 0;
+    font-weight: bold;
+    font-family: var(--font-code);
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--card-bg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero { flex-direction: column-reverse; justify-content: center; text-align: center; padding-top: 100px; height: auto;}
+    .hero-content h1 { font-size: 2.5rem; }
+    .code-window { margin: 0 0 2rem 0; width: 100%; }
+    .nav-links { display: none; }
+}
