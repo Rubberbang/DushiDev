@@ -397,6 +397,12 @@ footer {
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid rgba(255,255,255,0.05);
+    
+    /* New styles for the link wrapper */
+    display: block;            /* Makes the link behave like a box */
+    text-decoration: none;     /* Removes underline from the whole card */
+    color: inherit;            /* Prevents text from turning blue */
+    cursor: pointer;           /* Shows the hand icon */
 }
 
 .project-card:hover {
@@ -449,7 +455,6 @@ footer {
 }
 
 .btn-small {
-    text-decoration: none;
     color: var(--accent-yellow);
     font-weight: bold;
     font-size: 0.9rem;
@@ -457,10 +462,12 @@ footer {
     align-items: center;
     gap: 5px;
     transition: gap 0.2s;
+    margin-top: auto; /* Pushes button to bottom if content varies */
 }
 
-.btn-small:hover {
-    gap: 10px; /* Arrow moves slightly right on hover */
+/* When you hover the CARD, the BUTTON should animate */
+.project-card:hover .btn-small {
+    gap: 10px;
     text-decoration: underline;
 }
 
