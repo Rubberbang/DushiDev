@@ -323,13 +323,12 @@ footer {
 }
 
 /* =========================================
-   8. MOBILE RESPONSIVENESS
+   8. MOBILE RESPONSIVENESS (UPDATED)
    ========================================= */
+
 @media (max-width: 968px) {
     .hero {
-        flex-direction: column-reverse; /* Stack image on top of text on mobile? or below? */
-        /* Actually standard mobile is Text First, Image Second usually. 
-           But for the hero specifically, let's keep text top. */
+        flex-direction: column-reverse;
         justify-content: center;
         text-align: center;
         padding-top: 120px;
@@ -340,39 +339,54 @@ footer {
         padding-right: 0;
         margin-bottom: 3rem;
     }
-
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .code-window {
-        margin-left: 0;
-        width: 100%;
-    }
-
-    /* Team Section Stacking */
-    .team-content {
-        flex-direction: column; /* Stack vertically */
-        text-align: center;     /* Center text */
-        gap: 2rem;
-    }
     
-    .team-img {
-        max-width: 100%; /* Allow full width on mobile */
-    }
+    .hero-content h1 { font-size: 2.5rem; }
+    .code-window { margin-left: 0; width: 100%; }
+    .team-content { flex-direction: column; text-align: center; gap: 2rem; }
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; /* In a real project, you'd add JS to toggle this */
-    }
-    
     .hamburger {
-        display: block; /* Show hamburger menu icon */
+        display: block; /* Show the icon */
+        cursor: pointer;
     }
-    
-    .section {
-        padding: 4rem 5%;
+
+    /* By default, HIDE the menu on mobile */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Push it below the navbar */
+        left: 0;
+        background-color: rgba(15, 23, 42, 0.98); /* Dark background */
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* When JS adds the 'active' class, SHOW the menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Optional: Rotate the hamburger into an X */
+    .hamburger.toggle .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .hamburger.toggle .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.toggle .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 }
 
