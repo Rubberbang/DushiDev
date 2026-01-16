@@ -485,3 +485,13 @@ footer {
     gap: 10px;
     text-decoration: underline;
 }
+
+/* Fix for Email Overflow on Mobile */
+@media (max-width: 480px) {
+    .email-link {
+        font-size: 1.2rem;       /* Make it slightly smaller */
+        word-break: break-all;   /* Forces the text to wrap to the next line if needed */
+        overflow-wrap: break-word; 
+        padding: 0 10px;         /* Adds breathing room on the sides */
+    }
+}
