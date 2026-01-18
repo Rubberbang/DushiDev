@@ -390,6 +390,21 @@ footer {
     }
 }
 
+/* Fix for Code Window Overflow on small screens */
+@media (max-width: 480px) {
+    .code-window {
+        min-width: 0 !important; /* Allow it to shrink below 300px */
+        width: 100% !important;
+        margin: 0 !important;    /* Remove any side margins */
+    }
+    
+    .window-body {
+        padding: 15px;           /* Reduce padding inside the black box */
+        font-size: 0.8rem;       /* Make the code text slightly smaller */
+        word-break: break-all;   /* Force long code lines to wrap */
+    }
+}
+
 /* =========================================
    9. PORTFOLIO PAGE STYLES (UPDATED)
    ========================================= */
@@ -401,9 +416,13 @@ footer {
 
 .portfolio-grid {
     display: grid;
-    /* Cards will naturally stretch to match the tallest one in the row */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Changed 300px to 280px to fit smaller phones */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
+    
+    /* This forces the cards to be perfectly centered */
+    justify-content: center;
+    width: 100%;
 }
 
 /* 1. Update .project-card to be a flex container */
